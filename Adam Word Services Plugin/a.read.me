@@ -1,0 +1,29 @@
+This is getting closer to an SDK.
+
+Along with this note, you will find a working add-on to Adam - the Simple text editor. and a directory that contains the EMS-API information and working examples.
+
+You will notice that the main views in Adam are add-ons.  This means that you can write your own add-on to Adam to make adam read your favorite MIME types directly.  These can be very powerful, as the AdamForm add-on hopefully shows.
+
+If you'd like to implement to the EMS-API spec, then you may do so, but you must also include a few short routines for Adam to recognize you.  Check out the EMS-API examples for details on this.
+
+In the interim, please be patient.  We at Adamation are trying to build the best email system we can. 
+
+I tried to document the classes in here well enough for me to remember how things worked when I looked at it again next year.  I hope there is enough for you to get a grasp of what is going on.
+
+Enjoy,
+
+Paul Carnine
+pdc@adamation.com
+
+support: mailto:support@adamation.com
+
+---some random information---
+
+when you link be sure to turn on the -export option.
+
+to make Adam extract an enclosure, do this:
+		BMessage *msg = new BMessage('Xtct');
+		msg->AddString("PartID", mPartID);		// this is the part id Adam passed to you
+		msg->AddRef("Destination", &ref);		// this is the ref of where you want it to go.
+		Parent()->MessageReceived(msg);		// send it to your PARENT... 
+									// hmm.. why not PostMessage.. I'll check that.

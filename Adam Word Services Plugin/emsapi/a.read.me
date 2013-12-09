@@ -1,0 +1,33 @@
+This a full implementation of the EMS-API for processing MIME messages.
+It does not yet implement four functions, by they are not crucial
+to implementing MIME body part translators.
+
+I fully expect that this release will have API bugs, although I have
+compiled and succesfully run all relevant all the samples that come
+with the EMS-API SDK (and the source is included herin).
+
+UNIMPLEMENTED EMS-API routines.
+
+	ems_attacher_info
+	ems_attacher_hook
+	ems_special_info
+	ems_special_hook
+
+you can get all the original ems-api source and documentation from:
+
+<http://www.eudora.com/developers/emsapi/>
+
+The Adam EMS-API is being written to the spec found when
+downloading "Windows SDK, version 3a3" (emsapiv3a3.zip - 412k).
+
+Directories:
+	common - common code for all examples.
+	CaseTrans - a set of translators for changing case.
+	Sort - a translator for sorting a text message.
+	PseudoSq - a translator for manipulating the whole message.
+		WARNING: other folk won't be able to decode your messages if you
+				forget to take this translator out of your "adam" add-on
+				directory.  well, that is unless they have PsuedoSq 
+				on Be, Mac, or Win...
+
+pdc@athenian.org
